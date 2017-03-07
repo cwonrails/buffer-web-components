@@ -69,9 +69,7 @@ const renderApproval = ({
   <span className={style['post-button-last']}>
     <span className={style['vertical-line']}></span>
     <Button onClick={onApproveClick} noStyle>
-      <Text size={'small'}>
-        {isWorking && !isConfirmingDelete ? 'Approving' : 'Approve'}
-      </Text>
+      <Text size={'small'}>Approve</Text>
     </Button>
   </span>;
 
@@ -91,6 +89,13 @@ const renderControls = ({
       <Text size={'small'}> Deleting... </Text>
     );
   }
+
+  if (manager && isWorking && !isDeleting) {
+    return (
+      <Text size={'small'}> Approving... </Text>
+    );
+  }
+
   return (
     <div>
       {renderDelete({
