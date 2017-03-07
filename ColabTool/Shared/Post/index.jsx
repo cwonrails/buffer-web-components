@@ -54,15 +54,6 @@ const Post = ({
         />
       </Card>
     </div>
-    {
-      manager &&
-      <PostButtonPanel
-        disabled={isConfirmingDelete || isDeleting}
-        manager={manager}
-        onApproveClick={onApproveClick}
-        isWorking={isWorking}
-      />
-    }
   </div>;
 
 Post.commonPropTypes = {
