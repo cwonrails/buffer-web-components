@@ -28,13 +28,10 @@ const renderDeleteButton = ({
   onDeleteConfirmClick,
   onDeleteClick,
 }) =>
-  <span className={style['post-button-last']}>
+  <span className={style['post-button']}>
     <Button onClick={isConfirmingDelete ? onDeleteConfirmClick : onDeleteClick} noStyle>
-      <span className={style['post-icon']}>
-        <CloseIcon color={isConfirmingDelete ? 'torchRed' : undefined} size={'small'} />
-      </span>
       <Text size={'small'} color={isConfirmingDelete ? 'torchRed' : undefined}>
-        {isConfirmingDelete ? 'Confirm' : 'Delete Post'}
+        {isConfirmingDelete ? 'Confirm' : 'Delete'}
       </Text>
     </Button>
   </span>;
@@ -58,18 +55,31 @@ const renderDelete = ({
   </span>;
 
 const renderEdit = ({ onEditClick }) =>
-  <span className={style['post-button']}>
+  <span className={style['post-button-last']}>
     <Button onClick={onEditClick} noStyle>
-      <span className={style['post-icon']}>
-        <EditIcon size={'small'} />
-      </span>
-      <Text size={'small'}>Edit Post</Text>
+      <Text size={'small'}>Edit</Text>
+    </Button>
+  </span>;
+
+const renderApproval = ({
+  isConfirmingDelete,
+  isWorking,
+  onApproveClick,
+}) =>
+  <span className={style['post-button-last']}>
+    <Button onClick={onApproveClick} noStyle>
+      <Text size={'small'}>
+        {isWorking && !isConfirmingDelete ? 'Approving' : 'Approve'}
+      </Text>
     </Button>
   </span>;
 
 const renderControls = ({
   isDeleting,
   isConfirmingDelete,
+  isWorking,
+  manager,
+  onApproveClick,
   onCancelConfirmClick,
   onDeleteClick,
   onEditClick,
@@ -82,14 +92,19 @@ const renderControls = ({
   }
   return (
     <div>
-      {renderEdit({
-        onEditClick,
-      })}
       {renderDelete({
         isConfirmingDelete,
         onCancelConfirmClick,
         onDeleteConfirmClick,
         onDeleteClick,
+      })}
+      {renderEdit({
+        onEditClick,
+      })}
+      {manager && renderApproval({
+        isConfirmingDelete,
+        isWorking,
+        onApproveClick,
       })}
     </div>
   );
@@ -131,6 +146,7 @@ const PostDetails = ({
       {renderControls({
         isDeleting,
         isConfirmingDelete,
+        isWorking,
         manager,
         onApproveClick,
         onCancelConfirmClick,
