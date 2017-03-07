@@ -15,7 +15,7 @@ const profile = {
 storiesOf('PostDetails')
   .add('default', () => (
     <PostDetails
-      onCancelConfirmClick={linkTo('PostDetails', 'hovered')}
+      onCancelConfirmClick={linkTo('PostDetails', 'default')}
       onDeleteClick={linkTo('PostDetails', 'isConfirmingDelete')}
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onEditClick={action('edit-click')}
@@ -23,31 +23,36 @@ storiesOf('PostDetails')
       postType={'image'}
     />
   ))
-  .add('postType=link', () => (
+  .add('manager', () => (
     <PostDetails
-      onCancelConfirmClick={linkTo('PostDetails', 'hovered')}
-      onDeleteClick={linkTo('PostDetails', 'isConfirmingDelete')}
-      onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
+      manager
+      onApproveClick={linkTo('PostDetails', 'managerIsApproving')}
+      onCancelConfirmClick={linkTo('PostDetails', 'manager')}
+      onDeleteClick={linkTo('PostDetails', 'managerIsConfirmingDelete')}
+      onDeleteConfirmClick={linkTo('PostDetails', 'managerIsDeleting')}
       onEditClick={action('edit-click')}
       profile={profile}
-      postType={'link'}
-    />
-  ))
-  .add('postType=retweet', () => (
-    <PostDetails
-      onCancelConfirmClick={linkTo('PostDetails', 'hovered')}
-      onDeleteClick={linkTo('PostDetails', 'isConfirmingDelete')}
-      onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
-      onEditClick={action('edit-click')}
-      profile={profile}
-      postType={'retweet'}
+      postType={'image'}
     />
   ))
   .add('isConfirmingDelete', () => (
     <PostDetails
       onDeleteClick={linkTo('PostDetails', 'isConfirmingDelete')}
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
-      onCancelConfirmClick={linkTo('PostDetails', 'hovered')}
+      onCancelConfirmClick={linkTo('PostDetails', 'default')}
+      onEditClick={action('edit-click')}
+      postType={'image'}
+      profile={profile}
+      isConfirmingDelete
+    />
+  ))
+  .add('managerIsConfirmingDelete', () => (
+    <PostDetails
+      manager
+      onApproveClick={action('approve-click')}
+      onDeleteClick={linkTo('PostDetails', 'managerIsConfirmingDelete')}
+      onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
+      onCancelConfirmClick={linkTo('PostDetails', 'manager')}
       onEditClick={action('edit-click')}
       postType={'image'}
       profile={profile}
@@ -58,10 +63,36 @@ storiesOf('PostDetails')
     <PostDetails
       onDeleteClick={linkTo('PostDetails', 'isConfirmingDelete')}
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
-      onCancelConfirmClick={linkTo('PostDetails', 'hovered')}
+      onCancelConfirmClick={linkTo('PostDetails', 'default')}
       onEditClick={action('edit-click')}
       postType={'image'}
       profile={profile}
       isDeleting
+    />
+  ))
+  .add('managerIsDeleting', () => (
+    <PostDetails
+      manager
+      onApproveClick={action('approve-click')}
+      onDeleteClick={linkTo('PostDetails', 'managerIsConfirmingDelete')}
+      onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
+      onCancelConfirmClick={linkTo('PostDetails', 'manager')}
+      onEditClick={action('edit-click')}
+      postType={'image'}
+      profile={profile}
+      isDeleting
+    />
+  ))
+  .add('managerIsApproving', () => (
+    <PostDetails
+      manager
+      onApproveClick={action('approve-click')}
+      onDeleteClick={linkTo('PostDetails', 'managerIsConfirmingDelete')}
+      onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
+      onCancelConfirmClick={linkTo('PostDetails', 'manager')}
+      onEditClick={action('edit-click')}
+      postType={'image'}
+      profile={profile}
+      isWorking
     />
   ));
