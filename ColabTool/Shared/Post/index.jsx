@@ -45,6 +45,9 @@ const Post = ({
         <PostDetails
           isDeleting={isDeleting}
           isConfirmingDelete={isConfirmingDelete}
+          isWorking={isWorking}
+          manager={manager}
+          onApproveClick={onApproveClick}
           onCancelConfirmClick={onCancelConfirmClick}
           onDeleteClick={onDeleteClick}
           onDeleteConfirmClick={onDeleteConfirmClick}

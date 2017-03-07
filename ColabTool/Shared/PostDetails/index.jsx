@@ -95,22 +95,14 @@ const renderControls = ({
   );
 };
 
-const renderPostTypeIcon = (postType) => {
-  switch (postType) {
-    case 'image':
-      return (<ImageIcon size={'small'} />);
-    case 'retweet':
-      return (<RetweetIcon size={'small'} />);
-    default:
-      return (<LinkIcon size={'small'} />);
-  }
-};
-
 /* eslint-enable react/prop-types */
 
 const PostDetails = ({
   isDeleting,
   isConfirmingDelete,
+  isWorking,
+  manager,
+  onApproveClick,
   onCancelConfirmClick,
   onDeleteClick,
   onDeleteConfirmClick,
@@ -119,16 +111,6 @@ const PostDetails = ({
   postType,
 }) =>
   <div className={style['post-details']}>
-    <div className={style['post-controls']}>
-      {renderControls({
-        isDeleting,
-        isConfirmingDelete,
-        onCancelConfirmClick,
-        onDeleteClick,
-        onEditClick,
-        onDeleteConfirmClick,
-      })}
-    </div>
     <div className={style['post-author']}>
       <span className={style['post-details-author-image']}>
         <Image
@@ -142,17 +124,29 @@ const PostDetails = ({
         <Text size={'small'}>{profile.email}</Text>
       </span>
       <span className={style['post-source']}>
-        <Text size={'small'}>via web</Text>
+        <Text size={'small'}>- via web</Text>
       </span>
-      <span className={style['post-icon-last']}>
-        {renderPostTypeIcon(postType)}
-      </span>
+    </div>
+    <div className={style['post-controls']}>
+      {renderControls({
+        isDeleting,
+        isConfirmingDelete,
+        manager,
+        onApproveClick,
+        onCancelConfirmClick,
+        onDeleteClick,
+        onEditClick,
+        onDeleteConfirmClick,
+      })}
     </div>
   </div>;
 
 PostDetails.propTypes = {
   isDeleting: PropTypes.bool,
   isConfirmingDelete: PropTypes.bool,
+  isWorking: PropTypes.bool,
+  manager: PropTypes.bool,
+  onApproveClick: PropTypes.func.isRequired,
   onCancelConfirmClick: PropTypes.func.isRequired,
   onDeleteClick: PropTypes.func.isRequired,
   onDeleteConfirmClick: PropTypes.func.isRequired,
@@ -168,6 +162,7 @@ PostDetails.propTypes = {
 PostDetails.defaultProps = {
   isDeleting: false,
   isConfirmingDelete: false,
+  isWorking: false,
 };
 
 export default PostDetails;

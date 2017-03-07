@@ -7,16 +7,15 @@
   border-top: var(--border-width) solid var(--mystic);
 }
 
-.post-controls {
+.post-author {
   flex-grow: 1;
 }
 
-.post-author {
+.post-controls {
   display: flex;
 }
 
 .post-details-author-image {
-  display: flex;
   vertical-align: middle;
   align-items: center;
 }
