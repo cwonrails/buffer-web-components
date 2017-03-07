@@ -43,6 +43,11 @@
   margin-left: 1rem;
 }
 
+.vertical-line {
+  margin-right: 1rem;
+  border-left: var(--border-width) solid var(--mystic);
+}
+
 .post-button-last:hover span,
 .post-button:hover span {
   color: var(--black);

@@ -67,6 +67,7 @@ const renderApproval = ({
   onApproveClick,
 }) =>
   <span className={style['post-button-last']}>
+    <span className={style['vertical-line']}></span>
     <Button onClick={onApproveClick} noStyle>
       <Text size={'small'}>
         {isWorking && !isConfirmingDelete ? 'Approving' : 'Approve'}
