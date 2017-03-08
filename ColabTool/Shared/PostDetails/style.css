@@ -20,11 +20,6 @@
   align-items: center;
 }
 
-.post-icon {
-  color: var(--shuttle-gray);
-}
-
-.post-icon,
 .post-details-author-image,
 .post-source {
   margin-right: 0.5rem;
@@ -32,11 +27,6 @@
 
 .post-details-author-email {
   margin-right: 0.3rem;
-}
-
-.post-icon-last {
-  composes: post-icon;
-  margin: 0;
 }
 
 .post-button-last {

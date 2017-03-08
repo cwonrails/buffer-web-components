@@ -57,12 +57,10 @@ const renderEdit = ({ onEditClick }) =>
   </span>;
 
 const renderApproval = ({
-  isConfirmingDelete,
-  isWorking,
   onApproveClick,
 }) =>
   <span className={style['post-button-last']}>
-    <span className={style['vertical-line']}></span>
+    <span className={style['vertical-line']} />
     <Button onClick={onApproveClick} noStyle>
       <Text size={'small'} color={'blue'}>Approve</Text>
     </Button>
@@ -103,8 +101,6 @@ const renderControls = ({
         onEditClick,
       })}
       {manager && renderApproval({
-        isConfirmingDelete,
-        isWorking,
         onApproveClick,
       })}
     </div>
