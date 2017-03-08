@@ -3,11 +3,6 @@ import {
   Button,
   Image,
   Text,
-  CloseIcon,
-  EditIcon,
-  LinkIcon,
-  ImageIcon,
-  RetweetIcon,
 } from '@bufferapp/components';
 import style from './style.css';
 
@@ -69,7 +64,7 @@ const renderApproval = ({
   <span className={style['post-button-last']}>
     <span className={style['vertical-line']}></span>
     <Button onClick={onApproveClick} noStyle>
-      <Text size={'small'}>Approve</Text>
+      <Text size={'small'} color={'blue'}>Approve</Text>
     </Button>
   </span>;
 
