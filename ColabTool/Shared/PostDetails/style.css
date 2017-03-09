@@ -29,6 +29,10 @@
   margin-right: 0.3rem;
 }
 
+.post-button {
+  margin-left: 0.5rem;
+}
+
 .post-button-last {
   margin-left: 1rem;
 }
@@ -46,10 +50,6 @@
 .post-button-last:hover svg g,
 .post-button:hover svg g {
   fill: var(--black);
-}
-
-.post-cancel-delete {
-  margin-left: 0.5rem;
 }
 
 .post-cancel-delete:hover span {

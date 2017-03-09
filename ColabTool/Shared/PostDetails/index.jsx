@@ -38,15 +38,15 @@ const renderDelete = ({
   onDeleteClick,
 }) =>
   <span>
+    {isConfirmingDelete ?
+      renderConfirmDelete({ onCancelConfirmClick }) :
+      undefined
+    }
     {renderDeleteButton({
       isConfirmingDelete,
       onDeleteConfirmClick,
       onDeleteClick,
     })}
-    {isConfirmingDelete ?
-      renderConfirmDelete({ onCancelConfirmClick }) :
-      undefined
-    }
   </span>;
 
 const renderEdit = ({ onEditClick }) =>
@@ -135,7 +135,7 @@ const PostDetails = ({
         <Text size={'small'}>{profile.email}</Text>
       </span>
       <span className={style['post-source']}>
-        <Text size={'small'}>- via web</Text>
+        <Text size={'small'}>via web</Text>
       </span>
     </div>
     <div className={style['post-controls']}>
