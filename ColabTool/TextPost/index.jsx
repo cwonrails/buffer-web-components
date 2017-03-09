@@ -47,7 +47,6 @@ const TextPost = ({
       onDeleteConfirmClick={onDeleteConfirmClick}
       onEditClick={onEditClick}
       profile={profile}
-      postType={retweetProfile ? 'retweet' : 'text'}
       text={text}
       retweetProfile={retweetProfile}
     >

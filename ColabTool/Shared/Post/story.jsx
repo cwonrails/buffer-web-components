@@ -106,36 +106,6 @@ storiesOf('Post')
       {children}
     </Post>
   ))
-  .add('postType:image', () => (
-    <Post
-      profile={profile}
-      onMouseEnter={action('mouse-enter')}
-      onMouseLeave={action('mous-leave')}
-      onApproveClick={action('approve-click')}
-      onCancelConfirmClick={action('cancel-confirm-click')}
-      onDeleteClick={action('delete-click')}
-      onDeleteConfirmClick={action('delete-confirm-click')}
-      onEditClick={action('edit-click')}
-      postType={'image'}
-    >
-      {children}
-    </Post>
-  ))
-  .add('postType:link', () => (
-    <Post
-      profile={profile}
-      onMouseEnter={action('mouse-enter')}
-      onMouseLeave={action('mous-leave')}
-      onApproveClick={action('approve-click')}
-      onCancelConfirmClick={action('cancel-confirm-click')}
-      onDeleteClick={action('delete-click')}
-      onDeleteConfirmClick={action('delete-confirm-click')}
-      onEditClick={action('edit-click')}
-      postType={'link'}
-    >
-      {children}
-    </Post>
-  ))
   .add('retweet', () => (
     <Post
       profile={profile}
@@ -147,7 +117,6 @@ storiesOf('Post')
       onDeleteConfirmClick={action('delete-confirm-click')}
       onEditClick={action('edit-click')}
       retweetProfile={retweetProfile}
-      postType={'retweet'}
     >
       {children}
     </Post>

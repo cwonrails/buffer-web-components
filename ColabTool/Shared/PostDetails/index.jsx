@@ -120,7 +120,6 @@ const PostDetails = ({
   onDeleteConfirmClick,
   onEditClick,
   profile,
-  postType,
 }) =>
   <div className={style['post-details']}>
     <div className={style['post-author']}>
@@ -169,7 +168,6 @@ PostDetails.propTypes = {
     avatarUrl: PropTypes.string,
     email: PropTypes.string,
   }).isRequired,
-  postType: PropTypes.oneOf(['image', 'link', 'retweet']).isRequired,
 };
 
 PostDetails.defaultProps = {

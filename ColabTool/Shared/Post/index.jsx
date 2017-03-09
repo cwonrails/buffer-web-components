@@ -3,7 +3,6 @@ import {
   Card,
 } from '@bufferapp/components';
 import style from './style.css';
-import PostButtonPanel from '../PostButtonPanel';
 import PostDetails from '../PostDetails';
 import RetweetPanel from '../RetweetPanel';
 
@@ -28,7 +27,6 @@ const Post = ({
   onDeleteClick,
   onDeleteConfirmClick,
   onEditClick,
-  postType,
   profile,
   retweetProfile,
 }) =>
@@ -53,7 +51,6 @@ const Post = ({
           onDeleteConfirmClick={onDeleteConfirmClick}
           onEditClick={onEditClick}
           profile={profile}
-          postType={postType === 'text' ? 'link' : postType}
         />
       </Card>
     </div>
@@ -84,7 +81,6 @@ Post.commonPropTypes = {
 Post.propTypes = {
   ...Post.commonPropTypes,
   children: PropTypes.node.isRequired,
-  postType: PropTypes.oneOf(['image', 'link', 'text', 'retweet']),
 };
 
 Post.defaultProps = {
@@ -92,7 +88,6 @@ Post.defaultProps = {
   isDeleting: false,
   isWorking: false,
   manager: false,
-  postType: 'text',
 };
 
 export default Post;

@@ -86,7 +86,6 @@ const LinkPost = ({
       onDeleteConfirmClick={onDeleteConfirmClick}
       onEditClick={onEditClick}
       profile={profile}
-      postType={'link'}
       text={text}
     >
       {children}

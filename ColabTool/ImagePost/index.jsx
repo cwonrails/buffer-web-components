@@ -58,7 +58,6 @@ const ImagePost = ({
       onDeleteConfirmClick={onDeleteConfirmClick}
       onEditClick={onEditClick}
       profile={profile}
-      postType={retweetProfile ? 'retweet' : 'image'}
       text={text}
       retweetProfile={retweetProfile}
     >

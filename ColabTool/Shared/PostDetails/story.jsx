@@ -20,7 +20,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onEditClick={action('edit-click')}
       profile={profile}
-      postType={'image'}
     />
   ))
   .add('manager', () => (
@@ -32,7 +31,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'managerIsDeleting')}
       onEditClick={action('edit-click')}
       profile={profile}
-      postType={'image'}
     />
   ))
   .add('isConfirmingDelete', () => (
@@ -41,7 +39,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onCancelConfirmClick={linkTo('PostDetails', 'default')}
       onEditClick={action('edit-click')}
-      postType={'image'}
       profile={profile}
       isConfirmingDelete
     />
@@ -54,7 +51,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onCancelConfirmClick={linkTo('PostDetails', 'manager')}
       onEditClick={action('edit-click')}
-      postType={'image'}
       profile={profile}
       isConfirmingDelete
     />
@@ -65,7 +61,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onCancelConfirmClick={linkTo('PostDetails', 'default')}
       onEditClick={action('edit-click')}
-      postType={'image'}
       profile={profile}
       isDeleting
     />
@@ -78,7 +73,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onCancelConfirmClick={linkTo('PostDetails', 'manager')}
       onEditClick={action('edit-click')}
-      postType={'image'}
       profile={profile}
       isDeleting
     />
@@ -91,7 +85,6 @@ storiesOf('PostDetails')
       onDeleteConfirmClick={linkTo('PostDetails', 'isDeleting')}
       onCancelConfirmClick={linkTo('PostDetails', 'manager')}
       onEditClick={action('edit-click')}
-      postType={'image'}
       profile={profile}
       isWorking
     />
